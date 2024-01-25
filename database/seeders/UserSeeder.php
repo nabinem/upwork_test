@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'admin@upwork-testlocal',
+            'email' => 'admin@upwork-test.local',
             'password' => Hash::make('12345678'),
             'wallet' => 10
         ]);
