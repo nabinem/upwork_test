@@ -18,6 +18,7 @@ class CookieController extends Controller
         }
 
         $user->decrement('wallet', $cookies);
+        //i used $user->decrement('wallet', $cookies); instead of $user->update(['wallet' => $wallet - $cookies]); so that when code is run concurrently by two same users wallet value is updated correctly
 
         //log cookie orders
         $order = new CookieOrder;

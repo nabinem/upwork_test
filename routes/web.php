@@ -20,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
+    
+    //I have applied the number validation for cookies url param on a route cookie/buy/{cookies} so only number allowed
     Route::get('cookie/buy/{cookies}', [CookieController::class, 'buy'])->whereNumber('cookies');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
